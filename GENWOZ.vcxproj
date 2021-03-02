@@ -22,7 +22,7 @@
     <ClCompile Include="GENWOZ.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="notes.txt" />
+    <None Include="README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
