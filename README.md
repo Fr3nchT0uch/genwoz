@@ -19,6 +19,7 @@ genwoz.exe [-v] -t "0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 - -t "track table format" with 0:standard | 1: custom for each of the 35 tracks
 <br/>
 <br/>
+
 ## Building Instructions:
 
 Open solution under Visual Studio Community (Windows 10).  
