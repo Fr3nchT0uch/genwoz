@@ -7,10 +7,10 @@ v0.30
 
 **Code:** GROUiK (FRENCH TOUCH) / Thomas Harte
 
+GNU GENERAL PUBLIC LICENSE Version 3
+<br/>
+<br/>
 
-MIT License
-<br/>
-<br/>
 ## Usage:
 
 genwoz.exe [-v] -t "0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"
