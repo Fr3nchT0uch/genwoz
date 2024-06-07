@@ -3,7 +3,7 @@ GENWOZ
 A command-line tool to generate an "empty" WOZ image file!
 (heavely based on DSK2WOZ (c) 2018 Thomas Harte)
 
-v0.30 - Custom 32 sectors/128 bytes - with GAPS custom (GAP1 = 8 / GAP2 = 7 / GAP3 = 8)
+v0.40 - Custom 32 sectors/128 bytes - with GAPS custom (GAP1 = 8 / GAP2 = 7 / GAP3 = 8)
 
 Copyright (c) 2021 GROUiK/FRENCH TOUCH / Thomas Harte
 MIT License
@@ -85,12 +85,12 @@ int main(int argc, char* argv[]) {
 	*/
 	strcpy((char*)&woz[0], "INFO");	// Chunk ID.
 	set_int32(4, 60);					// Chunk size.
-	woz[8] = 1;							// INFO version: 1.
-	woz[9] = 1;							// Disk type: 5.25".
+	woz[8] = 1;						// INFO version: 1.
+	woz[9] = 1;						// Disk type: 5.25".
 	woz[10] = 0;						// Write protection: disabled.
 	woz[11] = 0;						// Cross-track synchronised image: no.
 	woz[12] = 1;						// MC3470 fake bits have been removed: yes.
-										// (or, rather, were never inserted)
+								// (or, rather, were never inserted)
 
 	// Append creator, which needs to be padded out to 32
 	// bytes with space characters.
@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
 	assert(creator_length < 32);
 
 	strcpy((char*)&woz[13], creator);
-	memset(&woz[13 + strlen(creator)], 32 - strlen(creator), ' ');
+	memset(&woz[13 + strlen(creator)], ' ', 32 - strlen(creator));			// bug fixed v0.4
 
 	// Chunk should be padded with 0s to reach 60 bytes in length;
 	// the buffer was memset to 0 at initialisation so that's implicit.
